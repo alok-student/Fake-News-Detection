@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Fake News Detection</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🤖 AI Powered Fake News Detection</h1>
+
+    <p class="subtitle">
+        Detect whether a news article is
+        <strong>Real</strong> or
+        <strong>Fake</strong>
+        using Machine Learning.
+    </p>
+
+    <form action="/predict" method="POST">
+
+        <textarea
+            name="news"
+            placeholder="📰 Paste complete news article here..."
+            required></textarea>
+
+        <div class="buttons">
+
+            <button type="submit">
+                🔍 Predict
+            </button>
+
+            <button type="reset" class="clear-btn">
+                🔄 Clear
+            </button>
+
+        </div>
+
+    </form>
+    {% if prediction %}
+
+<div class="result-box">
+
+    <h2 style="color: {{ color }};">
+        {{ prediction }}
+    </h2>
+
+    <p><strong>Confidence:</strong> {{ confidence }}%</p>
+
+</div>
+
+{% endif %}
+
+
+    
+    
+
+    <footer>
+
+        <p>
+            Developed by <b>Alok Kumar Yadav</b> ❤️
+        </p>
+
+    </footer>
+
+</div>
+
+</body>
+</html>
