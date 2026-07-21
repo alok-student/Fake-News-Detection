@@ -16,7 +16,7 @@ vectorizer = joblib.load("model/vectorizer.pkl")
 
 # Text Cleaning Function
 def clean_text(text):
-    text = text.lower()
+    text = text.lower():
     text = re.sub(r"http\S+", "", text)
     text = re.sub(r"[^a-zA-Z ]", "", text)
     text = re.sub(r"\s+", " ", text)
